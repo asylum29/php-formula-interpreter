@@ -36,7 +36,9 @@ class OperatorParser implements ParserInterface {
             '!=' => 'not_equal',
             "<=" => 'lower_or_equal',
             ">=" => 'greater_or_equal',
-            "in" => 'in'
+            "in" => 'in',
+            'and' => 'and',
+            'or' => 'or',
         );
     }
     
@@ -49,10 +51,11 @@ class OperatorParser implements ParserInterface {
         $expression = trim($rawExpression);
         
         $priorities = array(
+            ['and', 'or'],
             ['<=', '>=', '<', '>', '=', '!='],
             ['in'],
             ['+', '-'],
-            ['*', '/'],            
+            ['*', '/'],
         );
         
         foreach ($priorities as $operators) {

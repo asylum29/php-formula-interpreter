@@ -72,6 +72,20 @@ class CompilerTest extends \PHPUnit\Framework\TestCase {
             array('1 <= 2', true),
             array('2 <= 1', false),
             array('1 != 2', true),
+            array('true = 1 > 0', true),
+            array('true != 1 > 0', false),
+            array('false != 1 > 0', true),
+            array('5 + 4 < 9 = (1 > 0) or (3 + 1 * 2 = 5)', true),
+
+            // and / or
+            array('1 + 2 > 3 or 3 in [0, 1 + 1, 2]', false),
+            array('1 + 2 >= 3 or 3 in [0, 1 + 1, 2]', true),
+            array('1 + 2 >= 3 and 3 in [0, 1 + 1, 2]', false),
+            array('1 + 2 >= 3 and 3 in [0, 1 + 2, 2]', true),
+            array('true or false', true),
+            array('false or false', false),
+            array('true and 2 < 1', false),
+            array('true and 2 > 1', true),
         );
     }
     
@@ -130,11 +144,11 @@ class CompilerTest extends \PHPUnit\Framework\TestCase {
                 ],
                 '='  => [
                     'name' => 'equal',
-                    'supportedTypes' => ['numeric|string', 'numeric|string'],
+                    'supportedTypes' => ['numeric|string|boolean', 'numeric|string|boolean'],
                 ],
                 '!='  => [
                     'name' => 'not_equal',
-                    'supportedTypes' => ['numeric|string', 'numeric|string'],
+                    'supportedTypes' => ['numeric|string|boolean', 'numeric|string|boolean'],
                 ],
                 "<=" => [
                     'name' => 'lower_or_equal',
@@ -147,7 +161,15 @@ class CompilerTest extends \PHPUnit\Framework\TestCase {
                 "in" => [
                     'name' => 'in',
                     'supportedTypes' => ['numeric|string', 'array|string'],
-                ]   
+                ],
+                'and' => [
+                    'name' => 'and',
+                    'supportedTypes' => ['boolean', 'boolean'],
+                ],
+                'or' => [
+                    'name' => 'or',
+                    'supportedTypes' => ['boolean', 'boolean'],
+                ]
             ),
             sprintf('actual values : %s', json_encode($actual, JSON_PRETTY_PRINT))
         );

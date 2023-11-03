@@ -1,5 +1,6 @@
 <?php
 
+use Mormat\FormulaInterpreter\Command\BooleanCommand;
 use \Mormat\FormulaInterpreter\Command\NumericCommand;
 use \Mormat\FormulaInterpreter\Command\StringCommand;
 use \Mormat\FormulaInterpreter\Command\VariableCommand;
@@ -26,6 +27,7 @@ class ValidationVisitorTest extends \PHPUnit\Framework\TestCase {
     public function getValidCommandsData()
     {
         return array(
+            [new BooleanCommand(true)],
             [new NumericCommand(10)],
             [new StringCommand('10')],
             [new VariableCommand('foo')],

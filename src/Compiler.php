@@ -35,6 +35,7 @@ class Compiler {
         $this->parser->addParser(new Parser\OperatorParser($this->parser));
         $this->parser->addParser(new Parser\FunctionParser($this->parser));
         $this->parser->addParser(new Parser\ArrayParser($this->parser));
+        $this->parser->addParser(new Parser\BooleanParser());
         $this->parser->addParser(new Parser\VariableParser());
         $this->parser->addParser(new Parser\StringParser());
         $this->parser->addParser(new Parser\NumericParser());
@@ -43,6 +44,7 @@ class Compiler {
         $this->commandFactory = new Command\CommandFactory();
         $this->commandFactory->registerFactory('numeric', new Command\CommandFactory\NumericCommandFactory());
         $this->commandFactory->registerFactory('string', new Command\CommandFactory\StringCommandFactory());
+        $this->commandFactory->registerFactory('boolean', new Command\CommandFactory\BooleanCommandFactory());
         $this->commandFactory->registerFactory('variable', new Command\CommandFactory\VariableCommandFactory());
         $this->commandFactory->registerFactory('array', new Command\CommandFactory\ArrayCommandFactory($this->commandFactory));
         $this->commandFactory->registerFactory('operation', new Command\CommandFactory\OperationCommandFactory($this->commandFactory));
