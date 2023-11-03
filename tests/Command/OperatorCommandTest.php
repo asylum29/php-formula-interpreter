@@ -10,14 +10,14 @@ use Mormat\FormulaInterpreter\Exception\UnsupportedOperandTypeException;
  *
  * @author mormat
  */
-class OperatorCommandTest extends PHPUnit_Framework_TestCase {
+class OperatorCommandTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @var ContextCommand
      */
     protected $commandContext;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->commandContext = new CommandContext();
     }

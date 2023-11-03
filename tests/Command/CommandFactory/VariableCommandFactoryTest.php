@@ -8,7 +8,7 @@ use Mormat\FormulaInterpreter\Command\CommandFactory\VariableCommandFactory;
  *
  * @author mormat
  */
-class VariableCommandFactoryTest extends PHPUnit_Framework_TestCase {
+class VariableCommandFactoryTest extends \PHPUnit\Framework\TestCase {
     
     /**
      *  @dataProvider getData

@@ -9,14 +9,14 @@ use Mormat\FormulaInterpreter\Command\CommandInterface;
  *
  * @author mormat
  */
-class ArrayCommandTest extends PHPUnit_Framework_TestCase {
+class ArrayCommandTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @var ContextCommand
      */
     protected $commandContext;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->commandContext = new CommandContext();
     }

@@ -9,9 +9,9 @@ use Mormat\FormulaInterpreter\Parser\ParserInterface;
  *
  * @author mormat
  */
-class FunctionParserTest extends PHPUnit_Framework_TestCase {
+class FunctionParserTest extends \PHPUnit\Framework\TestCase {
     
-    public function setUp() {
+    public function setUp(): void {
         $argumentParser = $this->getMockBuilder(
             ParserInterface::class
         )->getMock();

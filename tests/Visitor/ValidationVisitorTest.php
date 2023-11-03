@@ -8,7 +8,7 @@ use \Mormat\FormulaInterpreter\Functions\FunctionInterface;
 use \Mormat\FormulaInterpreter\Visitor\ValidationVisitor;
 
 
-class ValidationVisitorTest extends PHPUnit_Framework_TestCase {
+class ValidationVisitorTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @dataProvider getValidCommandsData

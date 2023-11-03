@@ -2,7 +2,7 @@
 
 use Mormat\FormulaInterpreter\Command\CommandContext;
 
-class CommandContextTest extends PHPUnit_Framework_TestCase {
+class CommandContextTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * Should not throw exception if $variables is not an array

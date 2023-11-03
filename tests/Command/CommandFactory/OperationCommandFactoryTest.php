@@ -11,9 +11,9 @@ use Mormat\FormulaInterpreter\Command\CommandFactory\OperationCommandFactory;
  *
  * @author mormat
  */
-class OperationCommandFactoryTest extends PHPUnit_Framework_TestCase {
+class OperationCommandFactoryTest extends \PHPUnit\Framework\TestCase {
     
-    public function setUp() {
+    public function setUp(): void {
         $this->factory = new OperationCommandFactory($this->createCommandFactoryMock());
     }
     

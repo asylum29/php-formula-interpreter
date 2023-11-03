@@ -9,7 +9,7 @@ use Mormat\FormulaInterpreter\Command\CommandInterface;
  *
  * @author mormat
  */
-class CommandFactoryTest extends PHPUnit_Framework_TestCase {
+class CommandFactoryTest extends \PHPUnit\Framework\TestCase {
     
     public function testCreate() {
         $factory = new CommandFactory();

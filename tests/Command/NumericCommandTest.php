@@ -8,14 +8,14 @@ use Mormat\FormulaInterpreter\Command\NumericCommand;
  *
  * @author mormat
  */
-class NumericCommandTest extends PHPUnit_Framework_TestCase {
+class NumericCommandTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @var ContextCommand
      */
     protected $commandContext;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->commandContext = new CommandContext();
     }

@@ -6,3 +6,6 @@ composer.lock
 
 # misc
 /nbproject
+
+# phpstorm
+/.idea

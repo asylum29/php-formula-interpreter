@@ -6,7 +6,7 @@ A stand-alone php library for parsing and running formulas
 ## Installation via composer
 
 ```bash
-composer require mormat/php-formula-interpreter
+composer require asylum29/php-formula-interpreter
 ```
 
 ## How does it work ?

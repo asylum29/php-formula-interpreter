@@ -11,9 +11,9 @@ use Mormat\FormulaInterpreter\Functions\FunctionInterface;
  *
  * @author mormat
  */
-class FunctionCommandFactoryTest extends PHPUnit_Framework_TestCase {
+class FunctionCommandFactoryTest extends \PHPUnit\Framework\TestCase {
     
-    public function setUp() {
+    public function setUp(): void {
         $this->argumentCommandFactory = $this->getMockBuilder(
             CommandFactoryInterface::class
         )->getMock();
@@ -60,7 +60,7 @@ class FunctionCommandFactoryTest extends PHPUnit_Framework_TestCase {
     }
         
     protected function assertObjectPropertyEquals($object, $property, $expected) {
-        $this->assertEquals(PHPUnit_Framework_Assert::readAttribute($object, $property), $expected);
+        $this->assertEquals(\PHPUnit\Framework\Assert::readAttribute($object, $property), $expected);
     }
     
 }

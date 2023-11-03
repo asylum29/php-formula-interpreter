@@ -19,6 +19,7 @@ class OperationCommand implements CommandInterface {
     const LOWER_OPERATOR = 'lower';
     const GREATER_OPERATOR = 'greater';
     const EQUAL_OPERATOR = 'equal';
+    const NOT_EQUAL_OPERATOR = 'not_equal';
     const LOWER_OR_EQUAL_OPERATOR   = 'lower_or_equal';
     const GREATER_OR_EQUAL_OPERATOR = 'greater_or_equal';
     
@@ -31,6 +32,7 @@ class OperationCommand implements CommandInterface {
         self::LOWER_OPERATOR    => ['numeric|string', 'numeric|string'],
         self::GREATER_OPERATOR  => ['numeric|string', 'numeric|string'],
         self::EQUAL_OPERATOR    => ['numeric|string', 'numeric|string'],
+        self::NOT_EQUAL_OPERATOR => ['numeric|string', 'numeric|string'],
         self::LOWER_OR_EQUAL_OPERATOR   => ['numeric|string', 'numeric|string'],
         self::GREATER_OR_EQUAL_OPERATOR => ['numeric|string', 'numeric|string'],
         
@@ -114,6 +116,8 @@ class OperationCommand implements CommandInterface {
                     return $result > $command->run($context);
                 case self::EQUAL_OPERATOR:
                     return $result == $command->run($context);
+                case self::NOT_EQUAL_OPERATOR:
+                    return $result != $command->run($context);
                 case self::LOWER_OR_EQUAL_OPERATOR:
                     return $result <= $command->run($context);
                 case self::GREATER_OR_EQUAL_OPERATOR:

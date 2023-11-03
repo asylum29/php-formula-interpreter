@@ -11,14 +11,14 @@ use Mormat\FormulaInterpreter\Parser\ParserInterface;
  *
  * @author mormat
  */
-class ExpressionExploderTraitTest extends PHPUnit_Framework_TestCase {
+class ExpressionExploderTraitTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @var ExpressionExploderTrait
      */
     protected $expressionExploder;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->expressionExploder = new ExpressionExploderTraitTest_ExpressionExploderUser();
     }

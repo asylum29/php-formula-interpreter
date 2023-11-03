@@ -7,7 +7,7 @@ use Mormat\FormulaInterpreter\Exception as BaseException;
  *
  * @author mormat
  */
-class ExceptionTest extends PHPUnit_Framework_TestCase {
+class ExceptionTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @dataProvider getAllExceptionsMustImplementsBaseExceptionData()

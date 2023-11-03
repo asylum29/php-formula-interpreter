@@ -10,14 +10,14 @@ use Mormat\FormulaInterpreter\Functions\FunctionInterface;
  *
  * @author mormat
  */
-class FunctionCommandTest extends PHPUnit_Framework_TestCase {
+class FunctionCommandTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @var ContextCommand
      */
     protected $commandContext;
     
-    public function setUp()
+    public function setUp(): void
     {    
         $this->commandContext = new CommandContext([], $this->getFunctions());
     }

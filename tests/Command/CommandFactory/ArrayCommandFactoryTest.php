@@ -10,9 +10,9 @@ use Mormat\FormulaInterpreter\Command\CommandFactory\CommandFactoryInterface;
  *
  * @author mormat
  */
-class ArrayCommandFactoryTest extends PHPUnit_Framework_TestCase {
+class ArrayCommandFactoryTest extends \PHPUnit\Framework\TestCase {
     
-    public function setUp() {
+    public function setUp(): void {
         
         /* 
         $this->itemCommandMock = $this->getMockBuilder(

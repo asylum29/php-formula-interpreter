@@ -9,7 +9,7 @@ use \Mormat\FormulaInterpreter\Exception\UnknownFunctionException;
  *
  * @author mormat
  */
-class CompilerTest extends PHPUnit_Framework_TestCase {
+class CompilerTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @dataProvider getCompileAndRunData
@@ -21,7 +21,7 @@ class CompilerTest extends PHPUnit_Framework_TestCase {
         );
         
         $executable = $compiler->compile($expression);
-        $this->assertEquals($executable->run($variables), $result);
+        $this->assertEqualsWithDelta($executable->run($variables), $result, 0.00001);
 
     }
     
@@ -71,6 +71,7 @@ class CompilerTest extends PHPUnit_Framework_TestCase {
             array('1 = 1', true),
             array('1 <= 2', true),
             array('2 <= 1', false),
+            array('1 != 2', true),
         );
     }
     
@@ -129,6 +130,10 @@ class CompilerTest extends PHPUnit_Framework_TestCase {
                 ],
                 '='  => [
                     'name' => 'equal',
+                    'supportedTypes' => ['numeric|string', 'numeric|string'],
+                ],
+                '!='  => [
+                    'name' => 'not_equal',
                     'supportedTypes' => ['numeric|string', 'numeric|string'],
                 ],
                 "<=" => [

@@ -8,7 +8,7 @@ use Mormat\FormulaInterpreter\Command\CommandFactory\StringCommandFactory;
  *
  * @author mormat
  */
-class StringCommandFactoryTest extends PHPUnit_Framework_TestCase {
+class StringCommandFactoryTest extends \PHPUnit\Framework\TestCase {
     
     /**
      *  @dataProvider getData

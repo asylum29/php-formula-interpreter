@@ -7,14 +7,14 @@ use Mormat\FormulaInterpreter\Parser\ParserInterface;
 /**
  * @author mormat
  */
-class CompositeParserTest extends PHPUnit_Framework_TestCase {
+class CompositeParserTest extends \PHPUnit\Framework\TestCase {
         
     /**
      * @var type
      */
     protected $nbrCalls;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->nbrCalls = 0;
     }

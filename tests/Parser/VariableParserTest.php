@@ -8,9 +8,9 @@ use Mormat\FormulaInterpreter\Parser\ParserException;
  *
  * @author mormat
  */
-class VariableParserTest extends PHPUnit_Framework_TestCase {
+class VariableParserTest extends \PHPUnit\Framework\TestCase {
     
-    public function setUp() {
+    public function setUp(): void {
         $this->parser = new VariableParser();
     }
 

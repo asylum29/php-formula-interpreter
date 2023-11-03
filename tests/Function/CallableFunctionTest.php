@@ -7,7 +7,7 @@ use Mormat\FormulaInterpreter\Functions\CallableFunction;
  *
  * @author mormat
  */
-class CallableFunctionTest extends PHPUnit_Framework_TestCase {
+class CallableFunctionTest extends \PHPUnit\Framework\TestCase {
 
     /**
      * @dataProvider getTestSupportsData

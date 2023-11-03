@@ -8,14 +8,14 @@ use Mormat\FormulaInterpreter\Command\StringCommand;
  *
  * @author mormat
  */
-class StringCommandTest extends PHPUnit_Framework_TestCase {
+class StringCommandTest extends \PHPUnit\Framework\TestCase {
     
     /**
      * @var ContextCommand
      */
     protected $commandContext;
     
-    public function setUp()
+    public function setUp(): void
     {
         $this->commandContext = new CommandContext();
     }

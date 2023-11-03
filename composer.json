@@ -1,5 +1,5 @@
 {
-    "name": "mormat/php-formula-interpreter",
+    "name": "asylum29/php-formula-interpreter",
     "description": "Formula interpreter for PHP",
     "keywords": ["php"],
     "license": "MIT",
@@ -8,11 +8,16 @@
         {
             "name":      "mormat",
             "email":     "mormat@free.fr"
+        },
+        {
+            "name":      "asylum29",
+            "email":     "ksenon3@mail.ru"
         }
     ],
 
     "require-dev": {
-        "symfony/class-loader": "2.1.*"
+        "symfony/class-loader": "2.1.*",
+        "phpunit/phpunit": "7.5.20"
     },
 
     "autoload": {
