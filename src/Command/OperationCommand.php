@@ -15,9 +15,9 @@ class OperationCommand implements CommandInterface {
     const SUBTRACT_OPERATOR = 'subtract';
     const MULTIPLY_OPERATOR = 'multiply';
     const DIVIDE_OPERATOR = 'divide';
-    const IN_OPERATOR = 'in';
     const AND_OPERATOR = 'and';
     const OR_OPERATOR = 'or';
+    const IN_OPERATOR = 'in';
     const LOWER_OPERATOR = 'lower';
     const GREATER_OPERATOR = 'greater';
     const EQUAL_OPERATOR = 'equal';
@@ -30,9 +30,9 @@ class OperationCommand implements CommandInterface {
         self::SUBTRACT_OPERATOR => ['numeric', 'numeric'],
         self::MULTIPLY_OPERATOR => ['numeric', 'numeric'],
         self::DIVIDE_OPERATOR   => ['numeric', 'numeric'],
-        self::IN_OPERATOR       => ['numeric|string', 'array|string'],
         self::AND_OPERATOR      => ['boolean', 'boolean'],
         self::OR_OPERATOR       => ['boolean', 'boolean'],
+        self::IN_OPERATOR       => ['numeric|string', 'array|string'],
         self::LOWER_OPERATOR    => ['numeric|string', 'numeric|string'],
         self::GREATER_OPERATOR  => ['numeric|string', 'numeric|string'],
         self::EQUAL_OPERATOR    => ['numeric|string|boolean', 'numeric|string|boolean'],
@@ -105,6 +105,12 @@ class OperationCommand implements CommandInterface {
                 case self::DIVIDE_OPERATOR:
                     $result = $result / $command->run($context);
                     break;
+                case self::AND_OPERATOR:
+                    $result = $result && $command->run($context);
+                    break;
+                case self::OR_OPERATOR:
+                    $result = $result || $command->run($context);
+                    break;
                 case self::IN_OPERATOR:
                     $otherResult = $command->run($context);
                     if (is_array($otherResult)) {
@@ -113,10 +119,6 @@ class OperationCommand implements CommandInterface {
                         // $otherResult contains $result
                         return (strpos($otherResult, $result) !== false);
                     }
-                case self::AND_OPERATOR:
-                    return $result && $command->run($context);
-                case self::OR_OPERATOR:
-                    return $result || $command->run($context);
                 case self::LOWER_OPERATOR:
                     return $result < $command->run($context);
                 case self::GREATER_OPERATOR:

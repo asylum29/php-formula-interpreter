@@ -43,11 +43,11 @@ class CompilerTest extends \PHPUnit\Framework\TestCase {
             array('get_integer_part(3.4)', 3, []),
             array('modulo(5, two)', 1, ['two' => 2]),
             array('cos(1 * 2) + (3)', 2.5838531634529),
-            
+
             // Issue #4
-            array('(((100 * 0.43075) * 1.1 * 1.5) / (1-0.425)) * 1.105', 136.5852065217), 
+            array('(((100 * 0.43075) * 1.1 * 1.5) / (1-0.425)) * 1.105', 136.5852065217),
             array('1+(1+1)', 3),
-            
+
             // handling strings
             array("'foobar'", 'foobar'),
             array("lowercase('FOOBAR')", 'foobar'),
@@ -58,13 +58,13 @@ class CompilerTest extends \PHPUnit\Framework\TestCase {
             array("'wars' in lowercase('Star Wars - The Last Hope')", true),
             array("'jedi' in lowercase('Star Wars - The Last Hope')", false),
             // array("count('foobar')", 6, [], ['count' => 'strlen'])
-            
+
             // handling arrays
             array("[1, 2]", [1, 2]),
             array("2 in [0, 1 + 1, 2]", true),
             array("1 in [sin(0)]",      false),
             array("count([0, 1])", 2),
-            
+
             // comparison
             array('1 < 2', true),
             array('1 > 2', false),
@@ -86,6 +86,9 @@ class CompilerTest extends \PHPUnit\Framework\TestCase {
             array('false or false', false),
             array('true and 2 < 1', false),
             array('true and 2 > 1', true),
+
+            // other
+            array('false or false or true', true),
         );
     }
     
